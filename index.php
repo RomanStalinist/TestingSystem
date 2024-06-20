@@ -71,7 +71,6 @@ $student = getStudentById($_COOKIE['student-id']);
                                             print 'Отсутствует'
                                         ?>
                                     </p>
-                                    <?php endif; ?>
                                 </a>
                                 <a class="btn btn-warning mb-2" style="border-radius: 0 0 8px 8px"
                                    href="add-questions.php?id=<?php print $test->getId() ?>">
