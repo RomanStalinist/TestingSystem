@@ -7,8 +7,9 @@ if (empty($_COOKIE['student-id']))
 if (!array_key_exists('id', $_GET))
     header('Location: .');
 
-$test = getTestById((int)$_GET['id']);
-$q_id = $_GET['q_id'] ?? 1;
+$test_id = (int)$_GET['id'];
+$test = getTestById($test_id);
+$q_id = getQuestionsByTestId($test_id)[$_GET['q_id'] ?? 0]->getId();
 $question = getQuestionById($q_id);
 
 if (empty($test) || empty($question))
