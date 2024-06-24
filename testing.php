@@ -9,7 +9,7 @@ if (!array_key_exists('id', $_GET))
 
 $test_id = (int)$_GET['id'];
 $test = getTestById($test_id);
-$q_id = getQuestionsByTestId($test_id)[$_GET['q_id'] ?? 0]->getId();
+$q_id = getQuestionsByTestId($test_id)[$_GET['q_id']]->getId();
 $question = getQuestionById($q_id);
 
 if (empty($test) || empty($question))

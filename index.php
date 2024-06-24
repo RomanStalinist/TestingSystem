@@ -49,7 +49,7 @@ $student = getStudentById($_COOKIE['student-id']);
                         $tests = getTests();
                         if (count($tests) > 0) :
                             foreach(getTests() as $test): ?>
-                                <a class="list-group-item" href="testing.php?id=<?php print $test->getId() ?>">
+                                <a class="list-group-item" href="testing.php?id=<?php print $test->getId() ?>&q_id=0">
                                     <?php print $test->getTitle() .
                                         ' (' .
                                         count(getQuestionsByTestId($test->getId())) .
