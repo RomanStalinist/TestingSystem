@@ -73,11 +73,15 @@ $student = getStudentById($_COOKIE['student-id']);
                                         ?>
                                     </p>
                                 </a>
+                            <?php if (count(getQuestionsByTestId($test->getId())) < 3) : ?>
                                 <a class="btn btn-warning mb-2" style="border-radius: 0 0 8px 8px"
                                    href="add-questions.php?id=<?php print $test->getId() ?>">
                                     Добавить вопросы
                                 </a>
-                            <?php endforeach;
+                            <?php else : ?>
+                                <p style="mb-2">&nbsp;</p>
+                            <?php endif;
+                            endforeach;
                         else : ?>
                         <div>Пусто...</div>
                         <?php endif ?>
