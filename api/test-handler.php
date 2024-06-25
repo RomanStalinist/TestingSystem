@@ -12,8 +12,7 @@ $count = count(getQuestionsByTestId($test_id));
 
 # die("($q_id, $count)");
 
-if ($q_id > 4)
-    $q_id %= 4;
+$q_id /= 4;
 
 if ($q_id > $count - 1)
     header("Location: ../finish.php?id=$test_id");
