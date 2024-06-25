@@ -5,6 +5,8 @@ if (!array_key_exists('id', $_GET)
     || !array_key_exists('correct-answers', $_COOKIE)
     || !array_key_exists('student-id', $_COOKIE))
     header('Location: .');
+
+$student = getStudentById($_COOKIE['student-id']);
 ?>
 
 <!DOCTYPE html>
@@ -32,8 +34,8 @@ if (!array_key_exists('id', $_GET)
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp" alt="Generic placeholder image" class="img-fluid" style="width: 180px; border-radius: 10px;">
                         </div>
                         <div class="flex-grow-1 ms-3">
-                            <h5 class="mb-1">Роман</h5>
-                            <p class="mb-2 pb-1">ис-3</p>
+                            <h5 class="mb-1"><?php print $student->getFullName() ?></h5>
+                            <p class="mb-2 pb-1"><?php print $student->getGroupName() ?></p>
                         </div>
 
                         <form action="api/handler.php" method="post">

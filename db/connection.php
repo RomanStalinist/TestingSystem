@@ -281,7 +281,7 @@ function addTestResult(TestResult $test_result) : void
 {
     $stmt = connection->prepare('INSERT INTO test_results (test_id, student_id, points_obtained, test_date) VALUES (?, ?, ?, ?)');
     $stmt->bindValue(1, $test_result->getTestId());
-    $stmt->bindValue(2, $test_result->getStudentId(), PDO::PARAM_BOOL);
+    $stmt->bindValue(2, $test_result->getStudentId(), PDO::PARAM_INT);
     $stmt->bindValue(3, $test_result->getPointsObtained(), PDO::PARAM_INT);
     $stmt->bindValue(4, $test_result->getTestDate());
     $stmt->execute();
